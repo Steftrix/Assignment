@@ -1,0 +1,30 @@
+.ports-table {
+    grid-column: 1 / -1;
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+  
+      th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid rgba(0, 87, 146, 0.1);
+      }
+  
+      th {
+        background-color: #f5faff;
+        color: #0077b6;
+      }
+  
+      tr:hover {
+        background-color: #f9fdff;
+      }
+    }
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    color: #0077b6;
+  }

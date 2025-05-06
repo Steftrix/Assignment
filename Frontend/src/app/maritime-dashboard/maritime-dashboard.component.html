@@ -1,0 +1,58 @@
+<div class="ocean-theme">
+    <h1 class="page-title">Maritime Data Dashboard</h1>
+    
+    <div class="visualization-container">
+      <!-- Ship Speed Chart -->
+      <div class="chart-card">
+        <h2>Ship Maximum Speeds</h2>
+        <ngx-charts-bar-vertical
+          [results]="shipData"
+          [scheme]="colorScheme"
+          xAxisLabel="Ship Name"
+          yAxisLabel="Speed (knots)"
+          [showDataLabel]="true">
+        </ngx-charts-bar-vertical>
+      </div>
+  
+      <!-- Voyage Frequency Chart -->
+      <div class="chart-card">
+        <h2>Monthly Voyage Distribution</h2>
+        <ngx-charts-line-chart
+          [results]="voyageData"
+          [scheme]="colorScheme"
+          xAxisLabel="Month"
+          yAxisLabel="Number of Voyages"
+          [curve]="true">
+        </ngx-charts-line-chart>
+      </div>
+  
+      <!-- Country Visits Chart -->
+      <div class="chart-card">
+        <h2>Country Visits (Last Year)</h2>
+        <ngx-charts-pie-chart
+          [results]="countryVisitData"
+          [scheme]="colorScheme"
+          [labels]="true">
+        </ngx-charts-pie-chart>
+      </div>
+  
+      <!-- Ports Table -->
+      <div class="chart-card ports-table">
+        <h2>Port List</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Port Name</th>
+              <th>Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let port of portData">
+              <td>{{ port.name }}</td>
+              <td>{{ port.country }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
