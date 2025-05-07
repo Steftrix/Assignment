@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Orca_Updated_Logo.png" alt="Logo" class="logo">    </div>
+  
+    <div class="button-group">
+      <button (click)="fetchData('countries')">Load Countries</button>
+      <button (click)="fetchData('ports')">Load Ports</button>
+      <button (click)="fetchData('ships')">Load Ships</button>
+      <button (click)="fetchData('voyages')">Load Voyages</button>
+      <button (click)="fetchData('lastyearcountries')">Last Year Trips</button>
+      <button (click)="clearData()">Clear Data</button>
+    </div>
+  
+    <div class="grid-container">
+        <div *ngIf="data.length > 0; else noData">
+          <table>
+            <thead>
+              <tr>
+                <th *ngFor="let col of columns">{{ col }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of data">
+                <td *ngFor="let col of columns">{{ row[col] }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <ng-template #noData>
+        <p class="placeholder">No data available.</p>
+      </ng-template>
+
+
+<app-graph-chart></app-graph-chart>
+

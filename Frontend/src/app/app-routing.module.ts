@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MaritimeDashboardComponent } from './maritime-dashboard/maritime-dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
-    { path: '', component: MaritimeDashboardComponent },
-    { path: '**', redirectTo: '' }
-  ];
+  { path: '', component: DashboardComponent },
+  { path: '**', redirectTo: '' } // fallback
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

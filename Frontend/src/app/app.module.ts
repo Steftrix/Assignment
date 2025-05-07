@@ -1,25 +1,32 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
-
-import { AppRoutingModule } from './app-routing.module';
+import { CommonModule } from '@angular/common'; // Import CommonModule
+import { AppRoutingModule } from './app-routing.module';  // Add this import
 import { AppComponent } from './app.component';
-import { MaritimeDashboardComponent } from './maritime-dashboard/maritime-dashboard.component';
-import { CommonModule } from '@angular/common';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { GraphComponent } from './graph/graph.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Import BrowserAnimationsModule
 
 @NgModule({
   declarations: [
     AppComponent,
-    MaritimeDashboardComponent
+    DashboardComponent,
+    GraphComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     CommonModule,
     AppRoutingModule,
-    HttpClientModule,
-    NgxChartsModule
+    FormsModule,
+    NgxChartsModule,
+    BrowserAnimationsModule
   ],
+  schemas:[NO_ERRORS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

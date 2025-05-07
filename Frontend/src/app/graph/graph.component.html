@@ -1,0 +1,22 @@
+<div class="chart-container">
+    <ngx-charts-bar-horizontal
+      [view]="[700, 400]"
+      [scheme]="'cool'"
+      [results]="chartData"
+      [gradient]="false"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="false"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxisLabel]="'Departure Count'"
+      [yAxisLabel]="'Country'">
+    </ngx-charts-bar-horizontal>
+  </div>
+  
+  <div class="filter-container">
+    <label for="year-select">Select Year:</label>
+    <select id="year-select" [(ngModel)]="selectedYear" (change)="fetchTopDepartures()">
+      <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+    </select>
+  </div>
